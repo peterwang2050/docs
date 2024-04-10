@@ -1,8 +1,8 @@
-ChatDoc-TPU 是一款将清华大学 KEG 实验室开源 [ChatGLM2](https://github.com/THUDM/ChatGLM2-6B) 模型通过 Sophon SDK 移植到 Radxa BM1684X 芯片系列产品上实现本地 TPU 硬件加速推理，并使用 Streamlit 设计成易于用户交互的文件聊天机器人
+ChatDoc-TPU 是一款将清华大学 KEG 实验室开源 [ChatGLM2](https://github.com/THUDM/ChatGLM2-6B) 模型通过 Sophon SDK 移植到 SG2300X 芯片系列产品上实现本地 TPU 硬件加速推理，并使用 Streamlit 设计成易于用户交互的文件聊天机器人
 
 - 安装须知
 
-  在安装 ChatDoc-TPU 之前，请使用 memory_edit 工具修改当前设备的内存分配，TPU 内存需要12GB，使用方式参考[内存分布修改工具](../app-development/memory_allocate)
+  在安装 ChatDoc-TPU 之前，请使用 memory_edit 工具修改当前设备的内存分配，TPU 内存需要12GB，使用方式参考[内存分布修改工具](memory_allocate)
 
   > 推荐 NPU 7168 MB VPU 2048 MB VPP 3072 MB
 
@@ -84,4 +84,7 @@ ChatDoc-TPU 是一款将清华大学 KEG 实验室开源 [ChatGLM2](https://gith
     bash run.sh
     ```
 
-- 浏览器访问 bm1684x:8501 端口
+- 浏览器访问 Airbox ip 地址的 8501 端口
+
+### 应用展示
+![chatdoc_1.webp](/img/general-tutorial/tpu_ai/chatdoc_1.webp)

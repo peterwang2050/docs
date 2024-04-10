@@ -1,8 +1,8 @@
 ---
-sidebar_position: 3
+sidebar_position: 2
 ---
 
-# TPU-MLIR
+# TPU-MLIR 使用
 
 import Tpumlir from '../../../common/ai/\_tpu_mlir.mdx';
 

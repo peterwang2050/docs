@@ -1,5 +1,5 @@
 Stable Diffusion 是一个可以根据文本生成相应场景照片的生成式大模型，目前使用 [StableDiffusion 1.5](https://huggingface.co/runwayml/stable-diffusion-v1-5)
-开源模型通过 sophon SDK 移植到 Radxa BM1684X 芯片系列产品上进行本地 TPU 硬件加速推理，结合 LCM Lora 加速模块与风格 LoRa 实现快速推理生成特色风格图片，并使用 Gradio 实现用户交互
+开源模型通过 sophon SDK 移植到 SG2300X 芯片系列产品上进行本地 TPU 硬件加速推理，结合 LCM Lora 加速模块与风格 LoRa 实现快速推理生成特色风格图片，并使用 Gradio 实现用户交互
 
 - 克隆仓库并切换成 radxa_v0.2.0 分支
 
@@ -21,7 +21,7 @@ Stable Diffusion 是一个可以根据文本生成相应场景照片的生成式
 
   - [RealCartoon2.5D](https://civitai.com/models/218376/realcartoon-25d)
 
-  用户也可通过 model_export.py 与 [TPU-MLIR](../app-development/tpu_mlir) 编译任何 stable_diffusion v1.5 checkpoints, 具体请参考 [model_export/README.md](https://github.com/zifeng-radxa/SD-lcm-tpu/blob/radxa_v0.2.0/model_export/README.md)
+  用户也可通过 model_export.py 与 [TPU-MLIR](../model-compile) 编译任何 stable_diffusion v1.5 checkpoints, 具体请参考 [model_export/README.md](https://github.com/zifeng-radxa/SD-lcm-tpu/blob/radxa_v0.2.0/model_export/README.md)
 
   预编译中只有 awportrait.tar.gz 包含 VAE, 如有需要请自行下载 VAE, 参考并修改 model_path.py 中各模型路径
 
@@ -98,4 +98,19 @@ Stable Diffusion 是一个可以根据文本生成相应场景照片的生成式
   bash run.sh
   ```
 
-- 浏览器访问 bm1684x:8999
+- 浏览器访问 Airbox ip 地址的 8999 端口
+
+### 应用展示
+#### Text-to-Image
+![sd_1.webp](/img/general-tutorial/tpu_ai/sd_1.webp)
+
+```bash
+time cost:  1.5556528568267822 s
+```
+
+#### Image-to-Image
+![sd_2.webp](/img/general-tutorial/tpu_ai/sd_2.webp)
+
+```bash
+time cost:  1.580855369567871 s
+```
