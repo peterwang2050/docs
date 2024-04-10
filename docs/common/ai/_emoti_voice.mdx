@@ -1,4 +1,4 @@
-EmotiVoice-TPU 是一款使用网易开源 [EmotiVoice](https://github.com/netease-youdao/EmotiVoice) 模型与 MyShell 开源 [OpenVoice](https://github.com/myshell-ai/OpenVoice) 模型，通过 Sophon SDK 移植到 radxa BM1684X 芯片系列产品上，实现本地 TPU 进行硬件加速推理。
+EmotiVoice-TPU 是一款使用网易开源 [EmotiVoice](https://github.com/netease-youdao/EmotiVoice) 模型与 MyShell 开源 [OpenVoice](https://github.com/myshell-ai/OpenVoice) 模型，通过 Sophon SDK 移植到 SG2300X 芯片系列产品上，实现本地 TPU 进行硬件加速推理。
 此应用可用于文字生成带情感的语音（TTS）, 并可以利用 OpenVoice 对生成的语音进行音色转换，此应用使用 Gradio 实现用户友好交互界面
 
 - 克隆仓库
@@ -82,6 +82,7 @@ EmotiVoice-TPU 是一款使用网易开源 [EmotiVoice](https://github.com/netea
   cd EmotiVoice-TPU
   bash run_gr.py
   ```
+  浏览器访问 Airbox ip 地址的 7860 端口
 
 ### 常见问题
 
@@ -95,3 +96,7 @@ EmotiVoice-TPU 是一款使用网易开源 [EmotiVoice](https://github.com/netea
 
 - 首次启动慢？
   原因：第一次启动时需要下载 nltk_data， 如遇到网络问题，请检查网络
+
+### 应用展示
+![ev_1.webp](/img/general-tutorial/tpu_ai/ev_1.webp)
+
