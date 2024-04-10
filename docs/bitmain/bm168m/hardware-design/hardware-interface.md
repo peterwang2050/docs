@@ -12,18 +12,22 @@ sidebar_position: 4
 
 ## 电源接口
 
-**支持20V输入。**
+**支持 20V / 65W / 3.25A 的电源输入。**
 
 ## 调试串口
 
-使用USB 转 UART 线，波特率 115200。
+使用 USB Type-A 转 Type-C 数据线连接整机 Debug 口和 PC 端，波特率 115200。
 
 ## MicroSD
 
-支持热插拔。推荐三星和闪迪的SD卡。
-
-## USB 口
+支持热插拔。目前推荐三星和闪迪的SD卡。
 
 ## 有线网口
 
 一个是WAN口，一个是LAN口。
+
+## 底盖内视
+
+<img src="/img/bm168m/mark_fogwise_bm168m_02.webp" alt="radxa-aicore-bm1684x interfaces" />
+
+如上图， M-KEY 可接 PM991 NVME SSD 。 E-KEY 可接 Intel 7265NGW 和 Intel AX210 两种 WIFI & BT 模块
