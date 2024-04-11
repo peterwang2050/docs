@@ -13,12 +13,14 @@ BM168M 采用 Type-C 接口供电，支持 20V / 65W / 3.25A 的电源输入。
 系统默认的用户名和密码如下：
 
 用户一：
+
 ```
 用户名：linaro
 密码：  linaro
 ```
 
 用户二：
+
 ```
 用户名：admin
 密码：  admin
@@ -38,8 +40,8 @@ WIndows 下需要安装串口驱动，请参考：[安装串口驱动](/bitmain/
 
 1.在 Windows PC 上启动应用程序 Putty，并按如下方式进行设置：
 
-   - 在左边栏目中选择Session，将串行线路设置为 COM1，波特率设置 115200，连接类型为 Serial。
-   - 在 Saved Sessions 列中写入 rockchip ，然后按 Save
+- 在左边栏目中选择Session，将串行线路设置为 COM1，波特率设置 115200，连接类型为 Serial。
+- 在 Saved Sessions 列中写入 rockchip ，然后按 Save
 
 <img src="/img/bm168m/putty-setting-1.webp" alt="radxa-aicore-bm1684x interfaces" />
 
@@ -62,9 +64,11 @@ sudo apt-get install picocom
 ```
 
 2.开启 Picocom ：
+
 ```
 sudo picocom -b 115200 /dev/ttyUSBX
 ```
+
 X是不同设备，一般是0。
 
 ### SSH 登录
@@ -114,5 +118,3 @@ Windows 有许多 SSH 工具，这里以 [Mobaxterm](https://mobaxterm.mobatek.n
 <img src="/img/bm168m/connection-diagram-3.webp" alt="radxa-aicore-bm1684x interfaces" />
 
 这种方式不需要先获取IP，LAN口固定IP为192.168.150.1，在知道IP为192.168.150.1后使用和 WAN 口一样的方法即可 SSH 登录系统，但是需要我们将电脑的IP改为150的网段，比如设置我们的电脑IP为为192.168.150.5。
-
-

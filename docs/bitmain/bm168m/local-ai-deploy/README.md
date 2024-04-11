@@ -1,9 +1,9 @@
 ---
-sidebar_position: 25
+sidebar_position: 26
 ---
 
 # 本地 AI 模型部署
 
-主要介绍 Stable Diffusion, ChatGLM2, Whisper, Real-ESRGAN, Image/Video Search, EmotiVoice 等用于 AI 大模型应用的配置及使用
+主要介绍 AI 模型部署工具使用, AI 大模型部署， model zoo 中 cv类模型部署
 
 <DocCardList />

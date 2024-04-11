@@ -6,7 +6,6 @@ sidebar_position: 3
 
 在 Windows 电脑，BM168M 需要安装 CP210 的串口驱动程序，驱动下载地址：https://www.silabs.com/documents/public/software/CP210x_Universal_Windows_Driver.zip
 
-
 下载好压缩文件后解压再参照下图安装
 
 <img src="/img/bm168m/serial-driver-install-1.webp" alt="radxa-aicore-bm1684x interfaces" />
