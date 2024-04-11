@@ -1,5 +1,5 @@
 ---
-sidebar_position: 4
+sidebar_position: 2
 sidebar_label: 资源下载汇总
 title: 资源下载汇总
 ---
