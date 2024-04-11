@@ -34,13 +34,13 @@ Real-ESRGAN-TPU 视频/图片分辨率超分应用，通过使用腾讯ARC实验
 
 - 修复 basicsr 包依赖 bug 错误
 
-    将 functional_tensor 改成 functional，具体参考 [https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/13985](https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/13985)
+  将 functional_tensor 改成 functional，具体参考 [https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/13985](https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/13985)
 
-    ```bash
-    vim .venv/lib/python3.8/site-packages/basicsr/data/degradations.py
-    #from torchvision.transforms.functional_tensor import rgb_to_grayscale
-    from torchvision.transforms.functional import rgb_to_grayscale
-    ```
+  ```bash
+  vim .venv/lib/python3.8/site-packages/basicsr/data/degradations.py
+  #from torchvision.transforms.functional_tensor import rgb_to_grayscale
+  from torchvision.transforms.functional import rgb_to_grayscale
+  ```
 
 - 下载模型
 
@@ -55,6 +55,7 @@ Real-ESRGAN-TPU 视频/图片分辨率超分应用，通过使用腾讯ARC实验
   ```bash
   bash run_gr.sh
   ```
+
   浏览器访问 Airbox ip 地址的 7860 端口
 
   -（可选）通过 streamlit 启动
@@ -62,10 +63,11 @@ Real-ESRGAN-TPU 视频/图片分辨率超分应用，通过使用腾讯ARC实验
   ```bash
   bash run_st.sh
   ```
-   浏览器访问 Airbox ip 地址的 8501 端口
+
+  浏览器访问 Airbox ip 地址的 8501 端口
 
 ### 应用展示
-![re_1.webp](/img/general-tutorial/tpu_ai/re_1.webp)
 
+![re_1.webp](/img/general-tutorial/tpu_ai/re_1.webp)
 
 ![re_4.webp](/img/general-tutorial/tpu_ai/re_4.webp)
