@@ -6,7 +6,7 @@ sidebar_position: 1
 
 ## 电源
 
-BM1684M 采用 Type-C 接口供电，支持 20V / 65W / 3.25A 的电源输入。
+BM168M 采用 Type-C 接口供电，支持 20V / 65W / 3.25A 的电源输入。
 
 ## 访问设备
 
@@ -26,7 +26,7 @@ BM1684M 采用 Type-C 接口供电，支持 20V / 65W / 3.25A 的电源输入。
 
 ### 串口登录
 
-使用 USB Type-A 转 Type-C 数据线连接整机 Debug 口和 PC 端，波特率设置为11520，连接示意图：
+使用 USB Type-A 转 Type-C 数据线连接整机 Debug 口和 PC 端，波特率设置为115200，连接示意图：
 
 <img src="/img/bm168m/connection-diagram-1.webp" alt="radxa-aicore-bm1684x interfaces" />
 
