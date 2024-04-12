@@ -1,8 +1,8 @@
-- 进入 Radxa Model-zoo ResNet 目录
+- Enter the Radxa Model-zoo ResNet directory
   ```bash
   cd Radxa-Model-Zoo/sample/ResNet
   ```
-- 下载模型，可选 F32/F16/INT8 量化模型
+- Download the models, you can choose from F32/F16/INT8 quantized models
 
   ```bash
   # F32
@@ -15,38 +15,38 @@
   wget https://github.com/radxa-edge/TPU-Edge-AI/releases/download/model-zoo/resnet50_int8_1b.bmodel
   ```
 
-- 下载测试图片到数据文件夹
+- Download test images to the data folder
 
   ```bash
   mkdir images && cd images
   wget https://github.com/radxa-edge/TPU-Edge-AI/releases/download/model-zoo/grace_hopper.bmp
   ```
 
-- 创建虚拟环境
+- Create a virtual environment
 
-  **必须创建虚拟环境，否则可能会影响其他应用的正常运行**， 虚拟环境使用请参考[这里](../ai-tools/virtualenv_usage)
+  **It's necessary to create a virtual environment to avoid potential interference with other applications**, for instructions on using virtual environments, please refer [here](../ai-tools/virtualenv_usage)
 
   ```bash
   python3 -m virtualenv .venv
   source .venv/bin/activate
   ```
 
-- 安装 python 依赖包
+- Install python dependencies
   ```bash
   pip3 install --upgrade pip
   pip3 install numpy
   pip3 install https://github.com/radxa-edge/TPU-Edge-AI/releases/download/v0.1.0/sophon_arm-3.7.0-py3-none-any.whl
   ```
-- 运行 python 示例
+- Run the python examples
 
-  python 目录下提供了一系列Python例程，具体情况如下：
+  Under the python directory, a series of Python routines are provided, as follows:
 
-  | 序号 | Python例程       | 说明                                   |
-  | ---- | ---------------- | -------------------------------------- |
-  | 1    | resnet_opencv.py | 使用OpenCV解码、OpenCV前处理、SAIL推理 |
-  | 2    | resnet_bmcv.py   | 使用SAIL解码、BMCV前处理、SAIL推理     |
+  | No. | Python Example   | Description                                                          |
+  | --- | ---------------- | -------------------------------------------------------------------- |
+  | 1   | resnet_opencv.py | Decoding with OpenCV, preprocessing with OpenCV, inference with SAIL |
+  | 2   | resnet_bmcv.py   | Decoding with SAIL, preprocessing with BMCV, inference with SAIL     |
 
-  - 运行 resnet_opencv.py
+  - Run resnet_opencv.py
 
     ```bash
     export LD_LIBRARY_PATH=/opt/sophon/libsophon-current/lib:$LD_LIBRARY_PATH
@@ -54,13 +54,13 @@
     python3 python/resnet_opencv.py --input ./images --bmodel ./resnet50_int8_1b.bmodel
     ```
 
-    **参数说明**
+    **Parameter explanation**
 
     resnet_opencv.py [--input IMG_PATH] [--bmodel BMODEL]
 
-    `--input`: 推理图片路径，可输入整个图片**文件夹**的路径
+    `--input`: path to the images for inference, the path to the **folder** containing the images can be input
 
-    `--bmodel`: 用于推理的bmodel路径
+    `--bmodel`: path to the bmodel used for inference
 
     ```bash
     (.venv) linaro@bm1684:/data/ssd/docs_check/Radxa-Model-Zoo/sample/ResNet$ python3 python/resnet_opencv.py --input ./images --bmodel ./resnet50_int8_1b.bmodel
@@ -78,7 +78,7 @@
     INFO:root:postprocess_time(ms): 0.35
     ```
 
-    运行结果会保存在 `./results/resnet50_int8_1b.bmodel_dataset_opencv_python_result.json`
+    The results will be saved in `./results/resnet50_int8_1b.bmodel_dataset_opencv_python_result.json`
 
     ```json
     [
@@ -90,7 +90,7 @@
     ]
     ```
 
-  - 运行 resnet_bmcv.py
+  - Run resnet_bmcv.py
 
     ```bash
     export LD_LIBRARY_PATH=/opt/sophon/libsophon-current/lib:$LD_LIBRARY_PATH
@@ -98,13 +98,13 @@
     python3 python/resnet_bmcv.py  --input ./images --bmodel ./resnet50_int8_1b.bmodel
     ```
 
-    **参数说明**
+    **Parameter explanation**
 
     resnet_bmcv.py [--input IMG_PATH] [--bmodel BMODEL]
 
-    `--input`: 推理图片路径，可输入整个图片**文件夹**的路径
+    `--input`: path to the images for inference, the path to the **folder** containing the images can be input
 
-    `--bmodel`: 用于推理的bmodel路径
+    `--bmodel`: path to the bmodel used for inference
 
     ```bash
     (.venv) linaro@bm1684:/data/ssd/docs_check/Radxa-Model-Zoo/sample/ResNet$ python3 python/resnet_bmcv.py  --input ./images --bmodel ./resnet50_int8_1b.bmodel
@@ -122,7 +122,7 @@
     INFO:root:postprocess_time(ms): 0.30
     ```
 
-    运行结果会保存在 `./results/resnet50_int8_1b.bmodel_images_bmcv_python_result.json`
+    The results will be saved in `./results/resnet50_int8_1b.bmodel_images_bmcv_python_result.json`
 
     ```json
     [
@@ -136,6 +136,6 @@
 
 ## FAQ
 
-更多有关模型转换，模型量化细节, 模型精度测试，请参考
+For more information on model conversion, model quantization details, and model accuracy testing, please refer to:
 
-[模型转换](../../model-compile) 与 [Radxa Model-Zoo ResNet](https://github.com/zifeng-radxa/Radxa-Model-Zoo/tree/release/sample/ResNet)
+[Model Conversion](../../model-compile) and [Radxa Model-Zoo ResNet](https://github.com/zifeng-radxa/Radxa-Model-Zoo/tree/release/sample/ResNet)
