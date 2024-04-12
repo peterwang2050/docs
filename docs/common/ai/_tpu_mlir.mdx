@@ -122,25 +122,25 @@ model_deploy.py \
 
 - 这里用现有的100张来自 COCO2017 的图片举例, 执行`run_calibration.py`:
 
-```bash
-run_calibration.py yolov5s.mlir \
-    --dataset ../COCO2017 \
-    --input_num 100 \
-    -o yolov5s_cali_table
-```
+  ```bash
+  run_calibration.py yolov5s.mlir \
+      --dataset ../COCO2017 \
+      --input_num 100 \
+      -o yolov5s_cali_table
+  ```
 
 - 编译为INT8对称量化模型, 执行如下命令:
 
-```bash
-model_deploy.py \
-    --mlir yolov5s.mlir \
-    --quantize INT8 \
-    --calibration_table yolov5s_cali_table \
-    --chip bm1684x \
-    --model yolov5s_1684x_int8_sym.bmodel
-```
+  ```bash
+  model_deploy.py \
+      --mlir yolov5s.mlir \
+      --quantize INT8 \
+      --calibration_table yolov5s_cali_table \
+      --chip bm1684x \
+      --model yolov5s_1684x_int8_sym.bmodel
+  ```
 
-编译完成后, 会生成名为 yolov5s_1684x_int8_sym.bmodel 的文件
+  编译完成后, 会生成名为 yolov5s_1684x_int8_sym.bmodel 的文件
 
 ##### 编译为 INT8 非对称量化模型
 
