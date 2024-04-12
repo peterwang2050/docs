@@ -4,7 +4,7 @@ sidebar_label: 系统安装
 title: 系统安装
 ---
 
-本文档将介绍如何把 OS 镜像安装到 bm168m 中。
+本文档将介绍如何把 OS 镜像安装到 BM168M 中。
 
 ## 准备工作
 
@@ -15,80 +15,40 @@ title: 系统安装
 
 ## 镜像下载
 
-请到 [快速上手下的资源下载汇总](/bitmain/aicore-bm1684x/download.md)下载对应的镜像文件
+请到 [快速上手下的资源下载汇总](/bitmain/bm168m/getting-started/download.md)下载对应的镜像文件
 
 ## 系统安装
 
-### 1.格式化SD卡
+### 1.烧写镜像
 
-请将 SD 卡格式化为 FAT32 格式（如果 SD 卡上有多个分区，只能使用第一个分区），大小
-为 1GB 以上。下面介绍使用linux命令fdisk和windows下使用工具格式化SD卡，如果SD卡原本就有分区请先将分区进行删除.
+Balena Etcher 是一个跨平台且，用户界面友好的镜像文件烧写工具，我们推荐你使用它。
 
-### linux
+1. 下载 [Etcher](https://etcher.balena.io/#download-etcher/) 并安装。
 
-```
-$ sudo fdisk /dev/sda
-Welcome to fdisk (util-linux 2.37.2).
-Changes will remain in memory only, until you decide to write them.
-Be careful before using the write command.
+![](/img/common/etcher/rock5a-step1.webp)
 
-# d是删除分区命令
-Command (m for help): d
-Selected partition 1
-Partition 1 has been deleted.
 
-# n是新建分区命令
-Command (m for help): n
-Partition type
-   p   primary (0 primary, 0 extended, 4 free)
-   e   extended (container for logical partitions)
-Select (default p): # 回车即可
+2. 打开 Etcher，单击 `Flash from file` 以选择需要写入的镜像。
 
-Using default response p.
-Partition number (1-4, default 1): # 回车即可
-First sector (2048-125173759, default 2048): # 回车即可
-Last sector, +/-sectors or +/-size{K,M,G,T,P} (2048-125173759, default 125173759): +3G # 指定新建分区为3G大小，只要大于1G即可
+![](/img/common/etcher/rock5a-step2.webp)
 
-Created a new partition 1 of type 'Linux' and of size 3 GiB.
-Partition #1 contains a vfat signature.
+3. 点击 `Select target` 以选择设备，请注意小心选择。
 
-Do you want to remove the signature? [Y]es/[N]o: y # 不沿用之前的分区文件系统类型
+![](/img/common/etcher/rock5a-step3.webp)
 
-The signature will be removed by a write command.
+4. 点击 `Flash!` 开始写入，然后等待写入进度条完成。
 
-Command (m for help): wq # 保存退出
-The partition table has been altered.
-Calling ioctl() to re-read partition table.
-Syncing disks.
-```
+![](/img/common/etcher/rock5a-step4.webp)
 
-使用mkfs.vfat命令将分区格式化为fat32格式
+5. 当写入镜像成功时，Etcher 将会显示 `Flash Complete!`。
 
-```
-$ sudo mkfs.vfat /dev/sda1
-mkfs.fat 4.2 (2021-01-31)
-```
+![](/img/common/etcher/rock5a-step5.webp)
 
-### windows
+**如果刷写操作系统镜像错误, 请手动再试一次。**
 
-使用工具rufus，[安装链接](https://rufus.ie/)
+### 2.SD卡刷机
 
-按照下图步骤格式化sd卡
-
-<img
-  src="/img/aicore-bm1684x/rufus-use.webp"
-  alt="radxa-aicore-bm1684x interfaces"
-/>
-
-### 2.将下载的压缩包解压，并将里面的所有文件拷贝到 SD 卡根目录
-
-确认文件如下
-
-<img src="/img/aicore-bm1684x/img.webp" alt="radxa-aicore-bm1684x interfaces" />
-
-### 3.SD卡刷机
-
-请将 Fogwise BM168M 断电，插入 SD 卡，并连接串口终端（使用usb type-a转type-c数据线，type-c接 Fogwise BM168M 的debug口，type a连接电脑，波特率设置成115200，debug口位置在[Fogwise BM168M硬件信息下的硬件接口说明](../../bm168m/hardware-design/hardware-interface.md)寻找），然后给整机上电。您将看到
+请将 Fogwise BM168M 断电，插入 SD 卡，并连接串口终端（使用usb type-a转type-c数据线，type-c接 Fogwise BM168M 的debug口，type a连接电脑，波特率设置成115200，debug口位置在[Fogwise BM168M硬件开发下的硬件接口说明](../../bm168m/hardware-design/hardware-interface.md)寻找），然后给整机上电。您将看到
 BM1684X 自动进入刷机流程：
 
 ```

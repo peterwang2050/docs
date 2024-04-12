@@ -41,7 +41,7 @@ WIndows 下需要安装串口驱动，请参考：[安装串口驱动](/bitmain/
 1.在 Windows PC 上启动应用程序 Putty，并按如下方式进行设置：
 
 - 在左边栏目中选择Session，将串行线路设置为 COM1，波特率设置 115200，连接类型为 Serial。
-- 在 Saved Sessions 列中写入 rockchip ，然后按 Save
+- 在 Saved Sessions 列中写入想要设置的名字，然后按 Save
 
 <img src="/img/bm168m/putty-setting-1.webp" alt="radxa-aicore-bm1684x interfaces" />
 
